@@ -3,15 +3,15 @@
 A collection of **safe, interactive PowerShell scripts** for bulk renaming files.
 Built with a focus on **preview-first workflow, collision protection, and controlled execution**.
 
-> ⚡ The project is now centered around the **Unified Renamer**, which combines all major features into a single tool.
+> ⚡ The project is now centered around the **Bulk File Renamer**, a unified tool that combines all major features into one script.
 
 ---
 
 ## 🚀 Main Tool (Recommended)
 
-### 🧰 Unified Renamer (`Unified Renamer.ps1`)
+### 🧰 Bulk File Renamer (`Bulk File Renamer.ps1`)
 
-The primary script going forward. Combines all core renaming operations into one interactive CLI-like tool.
+The primary script for this project. Combines all core renaming operations into one interactive CLI-like tool.
 
 ### Features
 
@@ -50,12 +50,13 @@ Adds a suffix before file extensions.
 * Preserves file extensions
 * Avoids duplicate suffixes
 
-### 🔍 Find & Replace Renamer
+### 🔍 Find & Replace (`Find And Replace.ps1`)
 
-Original script for text replacement.
+Original standalone script for text replacement.
 
 * Replace or remove text within filenames
 * Useful for quick cleanup operations
+* Now optional (functionality included in main tool)
 
 ---
 
@@ -66,11 +67,19 @@ Original script for text replacement.
 1. Place the `.ps1` script in your target folder
 2. Right-click → **Run with PowerShell**
 
-### Option 2: Run from Terminal
+### Option 2: Run via Windows Terminal (Paste Method)
 
-```powershell
+1. Open the folder where your files are located
+2. Right-click → **Open in Windows Terminal** (or PowerShell)
+3. Copy the script code
+4. Paste it into the terminal
+5. Press **Enter** and follow the on-screen instructions
+
+### Option 3: Run from Terminal (Script File)
+
+```powershell id="n0b7k1"
 cd "path\to\your\files"
-.\Unified Renamer.ps1
+.\Bulk File Renamer.ps1
 ```
 
 ---
@@ -113,6 +122,7 @@ Planned improvements:
 * Extension filtering (`*.mp4`, `*.jpg`, etc.)
 * Recursive folder support
 * Dry-run flag
+* Ability to choose a custom target folder (instead of current directory)
 
 ---
 
