@@ -127,3 +127,9 @@ Suggestions, improvements, and feature ideas are welcome.
 
 Always review the preview before confirming.
 While safeguards are in place, bulk renaming operations are inherently sensitive.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License — see the LICENSE file for details.
