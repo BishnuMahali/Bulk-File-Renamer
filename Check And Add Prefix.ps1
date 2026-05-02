@@ -69,7 +69,7 @@ foreach ($item in $previewList) {
     $targetPath = Join-Path $item.Original.DirectoryName $newName
 
     # Collision protection
-    if (Test-Path $targetPath) {
+    if (Test-Path -LiteralPath $targetPath) {
         Write-Host "⚠️ Skipped (name exists): $newName" -ForegroundColor Yellow
         continue
     }

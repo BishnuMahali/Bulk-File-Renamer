@@ -74,7 +74,7 @@ foreach ($item in $preview) {
         continue
     }
 
-    if (Test-Path $targetPath) {
+    if (Test-Path -LiteralPath $targetPath) {
         Write-Host "⚠️ Skipped (exists): $($item.NewName)" -ForegroundColor Yellow
         $skipped++
         continue

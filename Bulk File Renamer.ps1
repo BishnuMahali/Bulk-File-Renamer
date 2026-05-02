@@ -119,7 +119,7 @@ while ($true) {
             continue
         }
 
-        if (Test-Path $targetPath) {
+        if (Test-Path -LiteralPath $targetPath) {
             Write-Host "⚠️ Exists: $($item.NewName)" -ForegroundColor Yellow
             $skipped++
             continue
