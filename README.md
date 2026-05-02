@@ -23,6 +23,7 @@ The primary script for this project. Combines all core renaming operations into 
 * **Preview Before Execution**
 * **Collision Protection** (prevents overwriting files)
 * **Skip Logic** (avoids duplicate prefixes/suffixes)
+* **Optimized Performance** (O(n) speed for large directories)
 * **Interactive Controls**
 
   * `Enter / Y` → Proceed
@@ -93,6 +94,7 @@ All scripts follow the same safety principles:
 * ✅ **Collision Detection** — skips existing filenames
 * ✅ **Error Handling** — clear success/failure summary
 * ✅ **No Silent Defaults** — all inputs are explicitly required
+* ✅ **Special Character Support** — safely handles `[]` in filenames
 
 ---
 
