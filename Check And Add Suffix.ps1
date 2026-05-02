@@ -31,9 +31,7 @@ while ($true) {
 
     # --- PREVIEW ---
     Write-Host "`n🔍 Preview:" -ForegroundColor Cyan
-    $previewList = @()
-
-    foreach ($file in $files) {
+    $previewList = @(foreach ($file in $files) {
         $baseName = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
         $extension = $file.Extension
 
@@ -44,12 +42,12 @@ while ($true) {
             $newName = $baseName + $suffix + $extension
             Write-Host "➡️ $($file.Name) → $newName" -ForegroundColor Gray
 
-            $previewList += [PSCustomObject]@{
+            [PSCustomObject]@{
                 Original = $file
                 NewName  = $newName
             }
         }
-    }
+    })
 
     if ($previewList.Count -eq 0) {
         Write-Host "`n✅ Nothing to rename." -ForegroundColor Green

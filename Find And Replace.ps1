@@ -30,23 +30,22 @@ if ($files.Count -eq 0) {
 }
 
 # --- PREVIEW ---
-$preview = @()
 Write-Host "`n🔍 Preview:" -ForegroundColor Cyan
 
-foreach ($file in $files) {
+$preview = @(foreach ($file in $files) {
     if ($file.Name.Contains($find)) {
         $newName = $file.Name.Replace($find, $replace)
 
         Write-Host "➡️ $($file.Name) → $newName" -ForegroundColor Gray
 
-        $preview += [PSCustomObject]@{
+        [PSCustomObject]@{
             Original = $file
             NewName  = $newName
         }
     } else {
         Write-Host "⏭️ Skip: $($file.Name)" -ForegroundColor DarkYellow
     }
-}
+})
 
 if ($preview.Count -eq 0) {
     Write-Host "`n✅ No matches found." -ForegroundColor Green

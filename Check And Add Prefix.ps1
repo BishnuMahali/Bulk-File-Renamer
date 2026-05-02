@@ -31,20 +31,19 @@ if ($files.Count -eq 0) {
 # Preview phase
 Write-Host "`n🔍 Preview of changes:" -ForegroundColor Cyan
 
-$previewList = @()
-foreach ($file in $files) {
+$previewList = @(foreach ($file in $files) {
     if ($file.Name.StartsWith($prefix)) {
         Write-Host "⏭️ Skip (already prefixed): $($file.Name)" -ForegroundColor DarkYellow
     } else {
         $newName = $prefix + $file.Name
         Write-Host "➡️ $($file.Name) → $newName" -ForegroundColor Gray
 
-        $previewList += [PSCustomObject]@{
+        [PSCustomObject]@{
             Original = $file
             NewName  = $newName
         }
     }
-}
+})
 
 if ($previewList.Count -eq 0) {
     Write-Host "`n✅ Nothing to rename." -ForegroundColor Green
