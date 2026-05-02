@@ -45,9 +45,7 @@ while ($true) {
 
     # --- PREVIEW ---
     Write-Host "`n🔍 Preview:" -ForegroundColor Cyan
-    $previewList = @()
-
-    foreach ($file in $files) {
+    $previewList = @(foreach ($file in $files) {
 
         $newName = $null
 
@@ -80,11 +78,11 @@ while ($true) {
 
         Write-Host "➡️ $($file.Name) → $newName" -ForegroundColor Gray
 
-        $previewList += [PSCustomObject]@{
+        [PSCustomObject]@{
             Original = $file
             NewName  = $newName
         }
-    }
+    })
 
     if ($previewList.Count -eq 0) {
         Write-Host "`n✅ Nothing to rename." -ForegroundColor Green
