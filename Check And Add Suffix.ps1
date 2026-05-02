@@ -84,7 +84,7 @@ while ($true) {
     foreach ($item in $previewList) {
         $targetPath = Join-Path $item.Original.DirectoryName $item.NewName
 
-        if (Test-Path $targetPath) {
+        if (Test-Path -LiteralPath $targetPath) {
             Write-Host "⚠️ Skipped (exists): $($item.NewName)" -ForegroundColor Yellow
             continue
         }
