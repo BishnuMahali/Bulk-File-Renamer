@@ -63,7 +63,16 @@ Original standalone script for text replacement.
 
 ## 🛠️ How to Use
 
-### Option 1: Run Directly
+### 🌟 Recommended: Run via Web (No Download Required)
+The easiest way to run the Bulk File Renamer is directly from your terminal using `Invoke-RestMethod` (`irm`).
+1. Open the folder where your files are located
+2. Right-click → **Open in Windows Terminal** (or PowerShell)
+3. Run the following command:
+```powershell
+irm https://raw.githubusercontent.com/BishnuMahali/Bulk-File-Renamer/main/Bulk%20File%20Renamer.ps1 | iex
+```
+
+### Option 1: Run Directly (Downloaded File)
 
 1. Place the `.ps1` script in your target folder
 2. Right-click → **Run with PowerShell**
