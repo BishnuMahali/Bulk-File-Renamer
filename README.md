@@ -1,159 +1,64 @@
-# Bulk File Renamer (PowerShell)
+# Bulk File Renamer Pro (PowerShell)
 
-A collection of **safe, interactive PowerShell scripts** for bulk renaming files.
-Built with a focus on **preview-first workflow, collision protection, and controlled execution**.
-
-> ⚡ The project is now centered around the **Bulk File Renamer**, a unified tool that combines all major features into one script.
+A fast, safe, and modern **WPF-based GUI utility** for bulk renaming files on Windows.
+Built with a focus on **real-time preview, collision protection, and a polished user experience**.
 
 ---
 
-## 🚀 Main Tool (Recommended)
+## 🚀 Key Features
 
-### 🧰 Bulk File Renamer (`Bulk File Renamer.ps1`)
-
-The primary script for this project. Combines all core renaming operations into one interactive CLI-like tool.
-
-### Features
-
-* **Multiple Modes**
-
-  * Prefix (add text at start)
-  * Suffix (add text before extension)
-  * Find & Replace (modify text anywhere)
-* **Preview Before Execution**
-* **Collision Protection** (prevents overwriting files)
-* **Skip Logic** (avoids duplicate prefixes/suffixes)
-* **Optimized Performance** (O(n) speed for large directories)
-* **Interactive Controls**
-
-  * `Enter / Y` → Proceed
-  * `N` → Restart
-  * `Esc` → Exit
-* **Session Loop** (run multiple operations without restarting script)
-
----
-
-## 🧩 Other Scripts (Specialized Use)
-
-These scripts are kept for focused, single-purpose workflows:
-
-### 🔤 Prefix Renamer
-
-Adds a prefix to filenames.
-
-* Skips already-prefixed files
-* Safe preview + confirmation flow
-
-### 🔚 Suffix Renamer
-
-Adds a suffix before file extensions.
-
-* Preserves file extensions
-* Avoids duplicate suffixes
-
-### 🔍 Find & Replace (`Find And Replace.ps1`)
-
-Original standalone script for text replacement.
-
-* Replace or remove text within filenames
-* Useful for quick cleanup operations
-* Now optional (functionality included in main tool)
+* **✨ Modern GUI:** Clean, intuitive interface built with Windows Presentation Foundation (WPF).
+* **👁️ Live Preview:** See exactly how your files will be renamed in real-time as you type.
+* **🔍 Multiple Operations:**
+  * **Prefix:** Add text to the beginning of filenames.
+  * **Suffix:** Add text before the file extension.
+  * **Find & Replace:** Quickly swap or remove specific text patterns.
+* **🛡️ Safety First:**
+  * **Collision Detection:** Automatically skips renaming if the target filename already exists.
+  * **Explicit Confirmation:** Final confirmation dialog before any changes are applied.
+  * **Non-Destructive:** Preserves file extensions and handles special characters (like `[]`) safely.
+* **📂 Easy Navigation:** Integrated folder browser to quickly switch between directories.
+* **⚡ High Performance:** Optimized for handling large folders with hundreds of files.
 
 ---
 
 ## 🛠️ How to Use
 
-### 🌟 Recommended: Run via Web (No Download Required)
-The easiest way to run the Bulk File Renamer is directly from your terminal using `Invoke-RestMethod` (`irm`).
-1. Open the folder where your files are located
-2. Right-click → **Open in Windows Terminal** (or PowerShell)
-3. Run the following command:
+### 🌟 Method 1: Run via Web (No Download Required)
+The fastest way to use the tool without downloading anything:
+1. Open the folder where your files are located.
+2. Right-click → **Open in Terminal** (or PowerShell).
+3. Copy and paste this command:
 ```powershell
 irm https://raw.githubusercontent.com/BishnuMahali/Bulk-File-Renamer/main/Bulk%20File%20Renamer.ps1 | iex
 ```
 
-### Option 1: Run Directly (Downloaded File)
+### 📥 Method 2: Download the Release (Recommended for Local Use)
+1. Go to the [Releases](https://github.com/BishnuMahali/Bulk-File-Renamer/releases) page.
+2. Download the latest release assets.
+3. Run `Bulk File Renamer.bat` to launch the app instantly.
 
-1. Place the `.ps1` script in your target folder
-2. Right-click → **Run with PowerShell**
-
-### Option 2: Run via Windows Terminal (Paste Method)
-
-1. Open the folder where your files are located
-2. Right-click → **Open in Windows Terminal** (or PowerShell)
-3. Copy the script code
-4. Paste it into the terminal
-5. Press **Enter** and follow the on-screen instructions
-
-### Option 3: Run from Terminal (Script File)
-
-```powershell id="n0b7k1"
-cd "path\to\your\files"
+### 💻 Method 3: Manual Execution
+If you have the `.ps1` file locally:
+1. Right-click `Bulk File Renamer.ps1` → **Run with PowerShell**.
+2. **OR** use the terminal:
+```powershell
 .\Bulk File Renamer.ps1
 ```
 
 ---
 
-## 🔒 Safety Features
-
-All scripts follow the same safety principles:
-
-* ✅ **Preview Mode** — see changes before applying
-* ✅ **Confirmation Step** — no accidental execution
-* ✅ **Collision Detection** — skips existing filenames
-* ✅ **Error Handling** — clear success/failure summary
-* ✅ **No Silent Defaults** — all inputs are explicitly required
-* ✅ **Special Character Support** — safely handles `[]` in filenames
-
----
-
-## 📌 Example Use Cases
-
-* Clean up messy filenames in bulk
-* Add version tags (`_v2`, `_final`)
-* Add identifiers (project names, dates, categories)
-* Remove unwanted text from downloaded files
-
----
-
 ## 📦 Requirements
 
-* Windows OS
-* PowerShell (5.1 or newer recommended)
-
----
-
-## 🔮 Roadmap
-
-Planned improvements:
-
-* CLI parameter support (non-interactive mode)
-* Undo/rollback system
-* Regex-based renaming
-* Extension filtering (`*.mp4`, `*.jpg`, etc.)
-* Recursive folder support
-* Dry-run flag
-* Ability to choose a custom target folder (instead of current directory)
-
----
-
-## 🤝 Contributing / Ideas
-
-This project is evolving toward a **full-featured renaming utility**.
-Suggestions, improvements, and feature ideas are welcome.
-
----
-
-## ⚠️ Disclaimer
-
-Always review the preview before confirming.
-While safeguards are in place, bulk renaming operations are inherently sensitive.
+* **OS:** Windows 10/11
+* **PowerShell:** 5.1 or PowerShell 7+
+* **.NET Framework:** (Standard on modern Windows)
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
